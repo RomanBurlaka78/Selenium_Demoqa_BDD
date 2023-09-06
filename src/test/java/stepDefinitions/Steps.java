@@ -9,6 +9,8 @@ import org.example.pages.DashboardPage;
 import org.example.pages.HomePage;
 import org.example.pages.LoginPage;
 
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -29,12 +31,15 @@ public class Steps {
         ops.addArguments("--remote-allow-origins=*");
         System.setProperty("webdriver.chrome.driver", "C:\\Disk D\\Java-Selenium\\java__selenium\\Selenium_SDA\\src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(ops);
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("myhttpproxy:3337");
+        ops.setCapability("proxy", proxy);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         pageObjectManager = new PageObjectManager(driver);
         homePage = pageObjectManager.getHomePage();
         homePage.navigateToHomePage();
-
+        Assertions.assertEquals("DEMOQA", driver.getTitle());
 
     }
 

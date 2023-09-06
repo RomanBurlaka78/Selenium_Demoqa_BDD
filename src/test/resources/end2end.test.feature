@@ -1,6 +1,7 @@
 Feature: automated end to end test
   Description: The purpose of description is end to end test
 
+  # The first example has 6 steps
   Scenario: user will go to loginPage and enter login to the dashboard page
     Given user is on Homepage
     When user clicks on login button
