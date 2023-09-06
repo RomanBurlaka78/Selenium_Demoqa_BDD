@@ -1,4 +1,4 @@
-# SDA_Project_final_Selenium
+# End2End_Test_with_Cucumber
 ## Roman Burlaka
 ## ZDTESTpol127
 ## Testing project -  Selenium and BDD on site (https://demoqa.com/books)
